@@ -6,6 +6,6 @@ class NPMController < ApplicationController
   
   private
   def npm_params
-    params.permit(:path, :ext, :hub, :mix, :env) #:depend, :beta
+    params.permit(:path, :ext, :hub, :mix, :env)
   end
 end

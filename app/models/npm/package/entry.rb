@@ -18,9 +18,7 @@ class NPM::Package::Entry < NPM
 
       # GzipReader handles uncompressing the tgz file, and any attempts 
       # to read from it will return the uncompressed contents of that file.
-      gzip_reader = dev? ? Zlib::GzipReader.open(io) : Zlib::GzipReader.new(io)
-      # gzip_reader = Zlib::GzipReader.open(open(package.tarball_url))
-      # gzip_reader = Zlib::GzipReader.open(open(dev? ? "vendor/#{package.tarball_name}-#{package.version}.tgz" : package.tarball_url))
+      gzip_reader = Zlib::GzipReader.new(io)
 
       # Minitar uses POSIX indicates that "A POSIX-compliant implementation must treat any unrecognized typeflag value as a regular file."
       # When using Gem::Package::TarReader it raises when octal string found such as using `jqueryui` package

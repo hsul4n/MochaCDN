@@ -9,10 +9,6 @@ class NPM
   private
   REGISTRY_URL = 'https://registry.npmjs.org'
 
-  def dev?
-    Rails.env.development?
-  end
-
   def minname
     '.min'
   end

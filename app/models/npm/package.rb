@@ -93,11 +93,11 @@ class NPM::Package < NPM
   end
   
   def tarball_url
-    (dev? ? "vendor/" : "#{REGISTRY_URL}/#{name}/-/") << "#{tarball_name}-#{version}.tgz"
+    "#{REGISTRY_URL}/#{name}/-/#{tarball_name}-#{version}.tgz"
   end
 
   def registry
-    @registry ||= JSON.parse(open(dev? ? "vendor/#{tarball_name}.json" : "#{REGISTRY_URL}/#{name}").read) rescue nil
+    @registry ||= JSON.parse(open("#{REGISTRY_URL}/#{name}").read) rescue nil
   end
 
   def version_registry
