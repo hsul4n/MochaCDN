@@ -14,19 +14,19 @@ default: &default
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: 7uthaifah
+  password: root
   host: localhost
 
 development:
   <<: *default
-  database: deliver_development
+  database: ajax_mochacdn_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 # test:
 #   <<: *default
-#   database: deliver_test
+#   database: ajax_mochacdn_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ development:
 #
 production:
   <<: *default
-  database: deliver_production
-  username: deliver
-  password: <%= ENV['DELIVER_DATABASE_PASSWORD'] %>
+  database: ajax_mochacdn_production
+  username: ajax_mochacdn
+  password: <%= ENV['AJAX_MOCHACDN_DATABASE_PASSWORD'] %>
